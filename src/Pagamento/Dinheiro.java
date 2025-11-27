@@ -1,0 +1,44 @@
+package trabalho_final_Ana_Proj_OO;
+
+public abstract class Dinheiro implements Pagamento{
+
+	
+	protected Pagamento next;
+    protected int valorNota; 
+    
+    public Dinheiro(int valorNota) {
+        this.valorNota = valorNota;
+    }
+    
+    
+    @Override
+    public void setNext(Pagamento next) {
+        this.next = next;
+    }
+    
+
+    @Override
+    public void handle(int request) {
+    	if (request >= valorNota) {
+            int restante = request % valorNota;
+            int numNotas = request / valorNota;
+            
+            System.out.println(String.format("Pagando %d com %d nota(s) de R$%d,00.", 
+                               request, numNotas, valorNota));
+            
+            if (restante > 0 && next != null) {
+                next.handle(restante);
+            } else if (restante == 0) {
+                System.out.println("Pagamento concluído.");
+            } else if (restante > 0 && next == null) {
+                System.out.println("ERRO: Não foi possível completar o pagamento. Faltam R$" + restante + ",00.");
+            }
+        } else {
+            if (next != null) {
+                next.handle(request);
+            } else {
+                System.out.println("ERRO: Não foi possível processar a requisição de R$" + request + ",00. Fim da cadeia.");
+            }
+        }
+    }
+}

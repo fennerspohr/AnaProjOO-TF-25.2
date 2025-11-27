@@ -1,0 +1,11 @@
+/bin/
+*.class
+
+# IDE (Eclipse)
+.settings/
+.project
+.classpath
+.metadata/
+*.launch
+*.sublime-project
+*.sublime-workspace
