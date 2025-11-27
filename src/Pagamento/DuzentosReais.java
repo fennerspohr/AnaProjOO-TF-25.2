@@ -1,4 +1,4 @@
-package trabalho_final_Ana_Proj_OO;
+package Pagamento;
 
 public class DuzentosReais extends Dinheiro {
     

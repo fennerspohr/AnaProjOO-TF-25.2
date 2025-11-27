@@ -1,4 +1,4 @@
-package trabalho_final_Ana_Proj_OO;
+package Pagamento;
 
 public abstract class Dinheiro implements Pagamento{
 
