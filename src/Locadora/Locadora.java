@@ -124,7 +124,7 @@ public class Locadora implements IObserver{
         }
         
         
-        System.out.print("Por quantos dias você deseja alugar '" + tituloMidia + "'? (Entrada do usuário) ");
+        System.out.print("Por quantos dias você deseja alugar '" + tituloMidia + "'?");
 		int diasAluguel = scanner.nextInt(); 
 		
          
